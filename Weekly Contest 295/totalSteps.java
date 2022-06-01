@@ -42,6 +42,7 @@ class Solution {
         
         for(int i = nums.length - 1;i >= 0;i--){
             while(!stack.empty() && nums[i] > nums[stack.peek()]){
+                // update the min elements has met
                 record[i] = Math.max(record[i] + 1, record[stack.peek()]);
                 stack.pop();
             }
